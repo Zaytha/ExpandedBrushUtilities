@@ -19,7 +19,7 @@ bl_info = {
     "location": "",
     "description": "Adds hotkeys for toggling brush direction (sculpt only), front faces only, and falloff shape",
     "wiki_url": "",
-    "tracker_url": "[PUT LINK HERE]",
+    "tracker_url": "https://github.com/Zaytha/ExpandedBrushUtilities",
     "category": "System"}
 
 
@@ -138,7 +138,7 @@ class ExpandedBrushUtilitiesPreferences(AddonPreferences):
         layout.separator()
         layout.label(text="Adds hotkeys for toggling brush direction (sculpt only), front faces only, and falloff shape")
         layout.label(text="Re-Written version of Jeff Boller's 'Toggle Add Subtract Brush Blend' script.")
-        layout.label(text="Github: [PUT LINK HERE]")
+        layout.label(text="Github: https://github.com/Zaytha/ExpandedBrushUtilities")
         layout.label(text="Original code: https://blenderartists.org/t/weight-painting-toggle-between-add-and-subtract/1161121/13")
 
         # no idea if there's like, a block of code editor in blender but this works idkkkkkkk
@@ -149,9 +149,9 @@ class ExpandedBrushUtilitiesPreferences(AddonPreferences):
         layout.label(text="- Toggles falloff mode from sphere to projection")
         layout.separator()
         layout.label(text="Default Keybinds:")
-        layout.label(text="- wm.toggle_sculpt_direction_blend (Ctrl + Shift + H)")
-        layout.label(text="- wm.toggle_front_faces_only (Ctrl + Shift + J)")
-        layout.label(text="- wm.toggle_falloff_shape (Ctrl + Shift + K)")
+        layout.label(text="- Toggle Sculpt Direction (Ctrl + Shift + H)")
+        layout.label(text="- Toggle Front Facing Only (Ctrl + Shift + J)")
+        layout.label(text="- Toggle Falloff Shape (Ctrl + Shift + K)")
         layout.separator()
 
 def register():
