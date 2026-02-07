@@ -12,7 +12,7 @@ from bpy.props import StringProperty
 
 
 bl_info = {
-    "name": "Expanded Brush Utilities 1.1.0",
+    "name": "Expanded Brush Utilities",
     "author": "Zaytha, Jeff Boller",
     "version": (1, 1, 0),
     "blender": (5, 00, 1),
