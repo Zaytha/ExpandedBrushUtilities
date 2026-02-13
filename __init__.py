@@ -9,12 +9,13 @@ from bpy.props import StringProperty
 # 1.0.4 - 2020-12-17: Figured out how to switch ONLY the current brush, rather than all brushes.
 
 # 1.1.0 - 2026-02-06: Added Sculpt Mode dirciton, removed add/sub mode for weight paint and tetxure paint (I use mix mode), Added toggles for front face only and projection
+# 1.1.1 - removed toggle sucltp direction on smooth, pinch
 
 
 bl_info = {
     "name": "Expanded Brush Utilities",
     "author": "Zaytha, Jeff Boller",
-    "version": (1, 1, 0),
+    "version": (1, 1, 1),
     "blender": (5, 00, 1),
     "location": "",
     "description": "Adds hotkeys for toggling brush direction (sculpt only), front faces only, and falloff shape",
@@ -45,14 +46,17 @@ class WM_OT_toggle_sculpt_direction_blend(bpy.types.Operator):
 
             # Crusty fix becuase I coudln't get the enum values for custom brushed idkkkkk
             if brush.name == "Inflate/Deflate":
+                
                 positive_direction = "INFLATE"
                 negative_direction = "DEFLATE"
             elif brush.name == "Smooth":
-                positive_direction = "SMOOTH"
-                negative_direction = "ENHANCE_DETAILS"
+                return {"FINISHED"} # ignore smooth
+                # positive_direction = "SMOOTH"
+                # negative_direction = "ENHANCE_DETAILS"
             elif brush.name == "Pinch/Magnify":
-                positive_direction = "MAGNIFY"
-                negative_direction = "PINCH"
+                return {"FINISHED"} # ignore pinch
+                # positive_direction = "MAGNIFY"
+                # negative_direction = "PINCH"
 
 
             if brush.direction == positive_direction:
